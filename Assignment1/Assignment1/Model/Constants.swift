@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct K{
+struct Constants{
     static let cellNibName = "ItemCell"
     static let cellIdentifier = "ReusableCell"
+}
+
+struct FStore{
+    static let collectionName = "productInfo"
+    static let itemInfo = "itemInfo"
     
-    struct FStore{
-        static let collectionName = "productInfo"
-        static let itemInfo = "itemInfo"
-        
-    }
 }

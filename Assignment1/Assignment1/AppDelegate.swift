@@ -21,31 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        let db = Firestore.firestore()
-        DispatchQueue.main.async {
-            clearFirestoreData()
-        }
-        
-        /*DispatchQueue.main.async {
-            fetchFilms()
-        }*/
+       // let db = Firestore.firestore()
+
+        clearFirestoreData()
         
         
-        
-        func fetchFilms() {
+        func fetchData() {
             let request = AF.request("https://www.inito.com/products/list")
             
             request.responseDecodable(of: Items.self) { [self] (response) in
                 
                 guard let res = response.value else {
                     print("something went wrong")
-                    return }
-                //  self.items = []
+                    return
+                }
                 
-                for temp in res.products.monitor {
-                    //self.items.append(temp)
-                    let dataDict = changeStructToData(temp)
-                    db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.itemInfo: dataDict]){(error) in
+                for item in res.products.monitor {
+                    let dataDict = changeStructToData(item)
+                    DataBaseComponents.db.collection(FStore.collectionName).addDocument(data: [FStore.itemInfo: dataDict]){(error) in
                         if let e = error {
                             print("Eroor : \(e)")
                         }
@@ -54,58 +47,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         }
                     }
                 }
-                for temp in res.products.monitorPro {
-                    //  self.items.append(temp)
-                    let dataDict = changeStructToData(temp)
-                    db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.itemInfo: dataDict])
+                for item in res.products.monitorPro {
+                    let dataDict = changeStructToData(item)
+                    DataBaseComponents.db.collection(FStore.collectionName).addDocument(data: [FStore.itemInfo: dataDict])
                 }
-                for temp in res.products.reflective3TStrip {
-                    // self.items.append(temp)
-                    let dataDict = changeStructToData(temp)
-                    db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.itemInfo: dataDict])
+                for item in res.products.reflective3TStrip {
+                    let dataDict = changeStructToData(item)
+                    DataBaseComponents.db.collection(FStore.collectionName).addDocument(data: [FStore.itemInfo: dataDict])
                 }
-                for temp in res.products.reflectiveStrip {
-                    //  self.items.append(temp)
-                    let dataDict = changeStructToData(temp)
-                    db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.itemInfo: dataDict])
+                for item in res.products.reflectiveStrip {
+                    let dataDict = changeStructToData(item)
+                    DataBaseComponents.db.collection(FStore.collectionName).addDocument(data: [FStore.itemInfo: dataDict])
                 }
-                for temp in res.products.transmissiveStrip {
-                    //  self.items.append(temp)
-                    let dataDict = changeStructToData(temp)
-                    db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.itemInfo: dataDict])
+                for item in res.products.transmissiveStrip {
+                    let dataDict = changeStructToData(item)
+                    DataBaseComponents.db.collection(FStore.collectionName).addDocument(data: [FStore.itemInfo: dataDict])
                 }
-                
-                
-                
-                
-                
-                
-                //  self.tableView.reloadData()
                 
             }
             
         }
         
-        
-        
-        
-        func changeStructToData(_ temp: info) -> [String: Any]{
+      
+        func changeStructToData(_ item: info) -> [String: Any]{
             let dataDict: [String: Any] = [
-              "title": temp.title,
-              "button_text": temp.button_text,
-              "description": temp.description,
-              "discounted_price": temp.discounted_price,
-              "image_url": temp.image_url
+              "title": item.title,
+              "button_text": item.button_text,
+              "description": item.description,
+              "discounted_price": item.discounted_price,
+              "image_url": item.image_url
             ]
             return dataDict
         }
         
-        
-        
-        
-        
+ 
         func clearFirestoreData() {
-            let collectionRef = db.collection(K.FStore.collectionName)
+            let collectionRef = DataBaseComponents.db.collection(FStore.collectionName)
             
             collectionRef.getDocuments { (snapshot, error) in
                 if let error = error {
@@ -115,25 +92,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         document.reference.delete()
                     }
                     print("Firestore data cleared")
-                    fetchFilms()
+                    fetchData()
                 }
             }
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
+
 
         return true
     }
+    
 
-    // MARK: UISceneSession Lifecycle
+// MARK: UISceneSession Lifecycle
 
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
@@ -148,19 +120,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
-
-
-
-//MARK: - fetch data
-
-
-    
-
-
-//MARK: - clear database
-
-
-
-  
 
