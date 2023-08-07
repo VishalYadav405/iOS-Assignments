@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Alamofire
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
+import Alamofire
 
 class SuggestionViewController: UIViewController {
 
