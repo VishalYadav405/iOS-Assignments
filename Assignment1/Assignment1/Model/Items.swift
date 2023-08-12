@@ -29,11 +29,15 @@ struct Item: Codable {
       }
 }
 
-struct info: Codable {
+struct info: Codable {    
+    let product_id: String
+    let checkout_url: String
     let title: String
-    let image_url: String
-    let discounted_price:String
-    let button_text: String
+    let price: String
     let description: String
-    
+    let shipping_info: String
+    let discounted_price: String
+    let image_url: String
+    let button_text: String
+
 }

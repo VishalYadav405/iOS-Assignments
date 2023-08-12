@@ -7,5 +7,6 @@ target 'Assignment1' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'RealmSwift'
 
 end

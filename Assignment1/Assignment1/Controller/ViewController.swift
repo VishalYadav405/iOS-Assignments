@@ -21,12 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.isNavigationBarHidden = false
-//        navigationController?.title = "inito"
-//    }
-
+    var defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +64,7 @@ class ViewController: UIViewController {
         if !mobileNumberConstrain.verify {
             mobileNumberLabel.text = mobileNumberConstrain.message
             mobileNumberLabel.isHidden = false
-        }
+        } 
         
         let passwordConstrain = userCheck.checkPassword()
         if !passwordConstrain.verify {
@@ -82,6 +77,8 @@ class ViewController: UIViewController {
         if !verification {
             return
         }
+        
+        defaults.setValue([NameField.text, emailField.text, mobileNumberField.text, passwordField.text], forKey: "users:\(NameField.text ?? "")")
         
         self.performSegue(withIdentifier: "goToTabBar", sender: self)
        
