@@ -333,10 +333,10 @@
             </objects>
             <point key="canvasLocation" x="-1785.4961832061067" y="-1082.3943661971832"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Welcome View Controllor-->
         <scene sceneID="Lw6-cc-9x5">
             <objects>
-                <viewController id="2yd-Tv-LTR" customClass="WelcomeViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2yd-Tv-LTR" customClass="WelcomeViewControllor" customModule="Assignment1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aYk-6f-8vH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,9 +390,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7ty-n2-K6b"/>
-                    <connections>
-                        <outlet property="titleLabel" destination="JHZ-nM-tfY" id="IXT-Uf-d1Q"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2h-NU-qcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
