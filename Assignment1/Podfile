@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'Assignment1' do
+  use_frameworks!
+
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'RealmSwift'
+
+end
