@@ -17,6 +17,9 @@
 		E06F37662A7E261600B4EE8D /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F37652A7E261600B4EE8D /* Items.swift */; };
 		E06F376A2A8020A200B4EE8D /* DataBaseComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F37692A8020A200B4EE8D /* DataBaseComponents.swift */; };
 		E06F376C2A80226400B4EE8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E06F376B2A80226400B4EE8D /* GoogleService-Info.plist */; };
+		E0AFA3F22A90980B005BD5E6 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFA3F12A90980B005BD5E6 /* cameraViewController.swift */; };
+		E0AFA3F42A909CE4005BD5E6 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFA3F32A909CE4005BD5E6 /* CameraController.swift */; };
+		E0AFA3F62A90FF20005BD5E6 /* SendImageToBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFA3F52A90FF20005BD5E6 /* SendImageToBackend.swift */; };
 		E0F40EAC2A74D6F700DB7A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F40EAB2A74D6F700DB7A00 /* AppDelegate.swift */; };
 		E0F40EAE2A74D6F700DB7A00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F40EAD2A74D6F700DB7A00 /* SceneDelegate.swift */; };
 		E0F40EB02A74D6F700DB7A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F40EAF2A74D6F700DB7A00 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 		E06F37652A7E261600B4EE8D /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		E06F37692A8020A200B4EE8D /* DataBaseComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseComponents.swift; sourceTree = "<group>"; };
 		E06F376B2A80226400B4EE8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0AFA3F12A90980B005BD5E6 /* cameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
+		E0AFA3F32A909CE4005BD5E6 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		E0AFA3F52A90FF20005BD5E6 /* SendImageToBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageToBackend.swift; sourceTree = "<group>"; };
 		E0F40EA82A74D6F700DB7A00 /* Assignment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F40EAB2A74D6F700DB7A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0F40EAD2A74D6F700DB7A00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 				E0F40ECC2A75218800DB7A00 /* ImageViewController.swift */,
 				E0F40ECE2A7521C400DB7A00 /* TabBarViewController.swift */,
 				E02CCCF92A87C0A100DCCEA8 /* WelcomeViewControllor.swift */,
+				E0AFA3F12A90980B005BD5E6 /* cameraViewController.swift */,
+				E0AFA3F32A909CE4005BD5E6 /* CameraController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				E06F37632A7E226500B4EE8D /* Constants.swift */,
 				E06F37652A7E261600B4EE8D /* Items.swift */,
 				E06F37692A8020A200B4EE8D /* DataBaseComponents.swift */,
+				E0AFA3F52A90FF20005BD5E6 /* SendImageToBackend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AFA3F42A909CE4005BD5E6 /* CameraController.swift in Sources */,
 				E0F40ECB2A75216600DB7A00 /* SuggestionViewController.swift in Sources */,
 				E0F40ECD2A75218800DB7A00 /* ImageViewController.swift in Sources */,
 				E02CCCF82A87A46A00DCCEA8 /* Model.xcdatamodeld in Sources */,
@@ -297,7 +307,9 @@
 				E0F40EC52A74EA1A00DB7A00 /* UserCheck.swift in Sources */,
 				E0F40EAC2A74D6F700DB7A00 /* AppDelegate.swift in Sources */,
 				E02CCCFA2A87C0A100DCCEA8 /* WelcomeViewControllor.swift in Sources */,
+				E0AFA3F62A90FF20005BD5E6 /* SendImageToBackend.swift in Sources */,
 				E0F40EAE2A74D6F700DB7A00 /* SceneDelegate.swift in Sources */,
+				E0AFA3F22A90980B005BD5E6 /* cameraViewController.swift in Sources */,
 				E0F40ECF2A7521C400DB7A00 /* TabBarViewController.swift in Sources */,
 				E06F37642A7E226500B4EE8D /* Constants.swift in Sources */,
 				E02CCCF52A87A33B00DCCEA8 /* Product.swift in Sources */,
@@ -448,6 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LP2989S72N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -461,7 +474,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vishal.Assignment1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vishal.QRCodeReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -477,6 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LP2989S72N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -490,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vishal.Assignment1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vishal.QRCodeReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

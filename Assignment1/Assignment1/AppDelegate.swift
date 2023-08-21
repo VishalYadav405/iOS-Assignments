@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dbComponents = DataBaseComponents.singletonDataBaseComponents
         dbComponents.clearFirestoreData()
         
-        do{
-            let realm = try Realm()
-        }catch{
-            print("error in instalising new realm, \(error)")
-        }
+//        do{
+//            let realm = try Realm()
+//        }catch{
+//            print("error in instalising new realm, \(error)")
+//        }
         
         return true
     }

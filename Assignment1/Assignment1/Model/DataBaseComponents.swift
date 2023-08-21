@@ -115,8 +115,7 @@ class DataBaseComponents{
        db.collection(FStore.collectionName).addDocument(data: [FStore.itemInfo: dataDict]){(error) in
            if let e = error {
                print("Eroor : \(e)")
-           }
-           else{
+           } else{
                print("data base save info")
            }
        }
@@ -153,9 +152,6 @@ class DataBaseComponents{
 
 
 
-
-        print("sdfsdfdsfs")
-
         let newProductCoreData = ProductCoreData(context: self.context)
         newProductCoreData.discountedPrice = itemInfo.discounted_price
         newProductCoreData.image_url = itemInfo.image_url
@@ -164,7 +160,6 @@ class DataBaseComponents{
         newProductCoreData.product_id = itemInfo.product_id
 
 
-        print(newProductCoreData)
 
         do{
             try context.save()
