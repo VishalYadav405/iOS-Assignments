@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DF2A0DD6BA2C6709AB12AB75 /* Pods_Assignment1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95674A19C00C45CCBFAB18E9 /* Pods_Assignment1.framework */; };
+		E0059E352A9481D900D2DF23 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0059E342A9481D900D2DF23 /* BluetoothViewController.swift */; };
+		E0059E372A94914D00D2DF23 /* ImageDownloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0059E362A94914D00D2DF23 /* ImageDownloads.swift */; };
 		E02CCCF52A87A33B00DCCEA8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02CCCF42A87A33B00DCCEA8 /* Product.swift */; };
 		E02CCCF82A87A46A00DCCEA8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E02CCCF62A87A46A00DCCEA8 /* Model.xcdatamodeld */; };
 		E02CCCFA2A87C0A100DCCEA8 /* WelcomeViewControllor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02CCCF92A87C0A100DCCEA8 /* WelcomeViewControllor.swift */; };
@@ -38,6 +40,8 @@
 		493DCB336D7779937A3AE4C2 /* Pods-Assignment1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment1.release.xcconfig"; path = "Target Support Files/Pods-Assignment1/Pods-Assignment1.release.xcconfig"; sourceTree = "<group>"; };
 		95674A19C00C45CCBFAB18E9 /* Pods_Assignment1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B268899DA9A4BF00339FEF67 /* Pods-Assignment1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment1.debug.xcconfig"; path = "Target Support Files/Pods-Assignment1/Pods-Assignment1.debug.xcconfig"; sourceTree = "<group>"; };
+		E0059E342A9481D900D2DF23 /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		E0059E362A94914D00D2DF23 /* ImageDownloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloads.swift; sourceTree = "<group>"; };
 		E02CCCF42A87A33B00DCCEA8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E02CCCF72A87A46A00DCCEA8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E02CCCF92A87C0A100DCCEA8 /* WelcomeViewControllor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllor.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				E02CCCF92A87C0A100DCCEA8 /* WelcomeViewControllor.swift */,
 				E0AFA3F12A90980B005BD5E6 /* cameraViewController.swift */,
 				E0AFA3F32A909CE4005BD5E6 /* CameraController.swift */,
+				E0059E342A9481D900D2DF23 /* BluetoothViewController.swift */,
+				E0059E362A94914D00D2DF23 /* ImageDownloads.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,10 +313,12 @@
 				E0F40EC52A74EA1A00DB7A00 /* UserCheck.swift in Sources */,
 				E0F40EAC2A74D6F700DB7A00 /* AppDelegate.swift in Sources */,
 				E02CCCFA2A87C0A100DCCEA8 /* WelcomeViewControllor.swift in Sources */,
+				E0059E372A94914D00D2DF23 /* ImageDownloads.swift in Sources */,
 				E0AFA3F62A90FF20005BD5E6 /* SendImageToBackend.swift in Sources */,
 				E0F40EAE2A74D6F700DB7A00 /* SceneDelegate.swift in Sources */,
 				E0AFA3F22A90980B005BD5E6 /* cameraViewController.swift in Sources */,
 				E0F40ECF2A7521C400DB7A00 /* TabBarViewController.swift in Sources */,
+				E0059E352A9481D900D2DF23 /* BluetoothViewController.swift in Sources */,
 				E06F37642A7E226500B4EE8D /* Constants.swift in Sources */,
 				E02CCCF52A87A33B00DCCEA8 /* Product.swift in Sources */,
 			);
