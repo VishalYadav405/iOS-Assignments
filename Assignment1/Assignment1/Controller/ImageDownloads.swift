@@ -18,46 +18,54 @@ class ImageDownloader{
     func downloadImages(_ startingIndex: Int, completion: @escaping () -> Void) async{
         imageArray = []
         for index in startingIndex...(2*startingIndex - 1 ){
-            async let num = loadImage(imageURLArray[index])
+            async let _ = loadImage(imageURLArray[index])
         }
-        await imageArray
+       // await imageArray
         
         print("downloaded image count is \(imageArray.count)")
         completion()
         
     }
     
-    func loadImage(_ imageUrl: String?) async -> Int{
+    func loadImage(_ imageUrl: String?) async{
 
         if let imageUrl = imageUrl{
             if let imageURL = URL(string: imageUrl){
                     if let imageData = try? Data(contentsOf: imageURL),
                        let image = UIImage(data: imageData) {
                         imageArray.append(image)
-                        return 2
+                        
                     }
             }
-
         }
-        return 0
     }
+    
+}
 
-//    func loadImage(_ urlString: String?) async -> Int{
-//        if let urlString = urlString {
-//            let imageURL = URL(string: urlString)!
-//            let request = URLRequest(url: imageURL)
-//            do{
-//                let (data, _) = try await URLSession.shared.data(for: request, delegate: nil)
-//                imageArray.append(UIImage(data: data)!)
-//                print("Finished loading image")
-//                return 3
-//            }catch{
-//                print("error in downloadind Image")
-//                return 2
-//            }
-//        }
-//        return 0
-//    }
 
+
+//MARK: -  BluetoothViewController extension
+
+extension BluetoothViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        imageDownloader.imageArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! ItemCell
+        if indexPath.row < imageDownloader.imageArray.count{
+            cell.itemImage.image = imageDownloader.imageArray[indexPath.row]
+        }
+        cell.ItemName.isHidden = true
+        cell.buttonLabel.isHidden = true
+        cell.itemDescription.isHidden = true
+        cell.itemPrice.isHidden = true
+        
+        return cell
+        
+        
+    }
+    
     
 }

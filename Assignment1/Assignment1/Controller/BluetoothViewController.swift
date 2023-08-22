@@ -12,9 +12,11 @@ class BluetoothViewController: UIViewController, CBPeripheralDelegate {
     
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var bluetoothStatusLabel: UILabel!
-    
-    
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     private var centralManager: CBCentralManager!
     var discoveredPeripherals = [CBPeripheral]()
     
@@ -32,6 +34,10 @@ class BluetoothViewController: UIViewController, CBPeripheralDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         centralManager = CBCentralManager(delegate: self, queue: bluetoothQueue)
+        
+        tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        tableView.dataSource = self
+        
         
     }
     
@@ -258,6 +264,10 @@ extension BluetoothViewController:  CBCentralManagerDelegate{
         }
         Task{
             await imageDownloader.downloadImages(Int(numberOfImage)){
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
                 var randomNumber = Int.random(in: 1...4)
                 let data = Data(bytes: &randomNumber, count: MemoryLayout.size(ofValue: randomNumber))
                 if let randomNumbaeChar = self.randomNumbaeChar{
