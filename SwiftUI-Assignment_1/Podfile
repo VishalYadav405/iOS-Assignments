@@ -1,0 +1,8 @@
+platform :ios, '12.0'
+
+target 'SwiftUI-Assignment_1' do
+  use_frameworks!
+
+  pod 'Alamofire', '~> 5.0.0-rc.2'
+
+end
