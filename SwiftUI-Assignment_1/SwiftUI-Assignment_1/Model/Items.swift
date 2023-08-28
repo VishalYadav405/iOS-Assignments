@@ -29,9 +29,9 @@ struct Item: Codable {
       }
 }
 
-struct Info: Codable, Identifiable {
+struct Info: Codable, Hashable{
     
-    var id = UUID()
+   // var id = UUID()
     var product_id: String
     var checkout_url: String
     var title: String

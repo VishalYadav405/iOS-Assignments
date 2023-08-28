@@ -18,8 +18,8 @@ struct SignUpView: View {
     @State private var user = UserInfo(userName: "", emailId: "", mobileNumber: "", password: "", birthdate: Date())
     
     var body: some View {
-        NavigationView{
-            
+        VStack{
+            Text("Sign Up").font(.title3).frame(alignment: .center)
             Form{
                 TextField("First Name", text: $user.userName)
                 TextField("Email ID", text: $user.emailId)
@@ -34,13 +34,11 @@ struct SignUpView: View {
                         .foregroundColor (.white)
                         .background(RadialGradient(colors: [Color(.systemTeal), Color(.systemPurple)], center: .center, startRadius: 5, endRadius: 120))
                         .clipShape (Capsule())
-                        
+                    
                     
                 })
                 
-              
             }
-            .navigationTitle("SignUp")
             
         }
     }

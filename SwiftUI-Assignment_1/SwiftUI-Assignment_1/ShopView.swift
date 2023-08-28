@@ -12,30 +12,29 @@ struct ShopView: View {
   //  var apicall = APICall.shared
     @State private var shopItem: [Info] = []
     var body: some View {
-        
-        
-        NavigationView{
-            
-            List{
-                ForEach(shopItem) { item in
-                    ItemCell(item: item)
+            VStack{
+                Text("Shop").font(.largeTitle)
+                List{
+                    
+                    ForEach(shopItem, id: \.self) { item in
+                        ItemCell(item: item)
+                    }
+                    
                 }
-            
-        }
-            .navigationTitle("Shop")
-        }
-        .task {
-            shopItem = fetchData()
-        }
+            }
+            .task{
+                await fetchData()
+            }
     }
     
     
-    func fetchData() -> [Info] {
-        var shopData = [Info]()
+    func fetchData() async {
+      //  var shopData = [Info]()
         
         let request = AF.request("https://www.inito.com/products/list")
 
         request.responseDecodable(of: Items.self) { (response) in
+           // print(response)
 
             guard let res = response.value else {
                 print("something went wrong")
@@ -43,24 +42,25 @@ struct ShopView: View {
             }
 
             for itemInfo in res.products.monitor {
-                shopData.append(itemInfo)
+               // print("---------Monitor-----------")
+                shopItem.append(itemInfo)
             }
 
             for itemInfo in res.products.monitorPro {
-                shopData.append(itemInfo)
+                shopItem.append(itemInfo)
             }
             for itemInfo in res.products.reflective3TStrip {
-                shopData.append(itemInfo)
+                shopItem.append(itemInfo)
             }
             for itemInfo in res.products.reflectiveStrip {
-                shopData.append(itemInfo)
+                shopItem.append(itemInfo)
             }
             for itemInfo in res.products.transmissiveStrip {
-                shopData.append(itemInfo)
+                shopItem.append(itemInfo)
             }
 
         }
-        return shopData
+       // return shopData
     }
     
 }
@@ -75,26 +75,39 @@ struct ShopView_Previews: PreviewProvider {
 struct ItemCell: View{
     var item: Info
     var body: some View{
-        VStack{
+        VStack(alignment: .leading){
             
             
             Image(uiImage: loadImage(item.image_url)!)
                 .resizable()
-                    .scaledToFit().frame(height: 70)
+                    .scaledToFit()
                     .cornerRadius(4)
                     .padding(.vertical, 4)
             
+            Text(item.title).font(.headline)
             
-            
+            HStack{
+                Text("Rs. \(item.discounted_price)")
+                    .font(.title3)
+                
+                Spacer()
+                Button {
+                    print("Button pressed")
+                } label: {
+                    Text("Add to Cart")
+                        .frame(width: 150, height: 30, alignment: .center)
+                        
+                        .background(.black)
+                        .foregroundColor(.white)
+                }.clipShape(Capsule())
+                .padding(.trailing, 20)
 
-//            VStack(alignment: .leading, spacing: 5) {
-//                Text(video.title).fontWeight(.semibold)
-//                    .lineLimit(2)
-//                    .minimumScaleFactor(0.5)
-//
-//                Text(video.uploadDate).font(.subheadline)
-//                    .foregroundColor(.secondary)
-//            }
+            }
+            
+            Text(item.description)
+                .font(.caption)
+           
+
         }
 
     }
